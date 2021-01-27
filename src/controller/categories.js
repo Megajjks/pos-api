@@ -40,8 +40,8 @@ const getAllCategories = async (req, res) => {
 
 const getCategory = async (req, res) => {
   const { id } = req.params;
-  const result = await selectDataCategory(id);
-  return jsonResponse(res, result[0]);
+  const result = await selectDataCategory(id).catch(console.log);
+  return jsonResponse(res, result);
 };
 
 const postCategory = async (req, res) => {
